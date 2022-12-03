@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Base Library</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		canvas, body {
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			position: fixed
+		}
+	</style>
+
+</head>
+<body onload="init()">
+
+	<canvas id="canvas"></canvas>
+
+	<!-- Put image sprites here -->
+	<div style="display: none">
+		<!--<img src="Images/test.png" id="test" alt=""/>-->
+	</div>
+
+	<script src="LibScripts/MathFunctions.js"></script>
+	<script src="LibScripts/Vector2.js"></script>
+
+	<script src="LibScripts/Components/Component.js"></script>
+	<script src="LibScripts/Components/Transform.js"></script>
+
+	<script src="LibScripts/Components/Renderer.js"></script>
+	<script src="LibScripts/Components/Animator.js"></script>
+
+	<script src="LibScripts/Components/Movement.js"></script>
+
+	<script src="LibScripts/Components/Colliders/Collider.js"></script>
+	<script src="LibScripts/Components/Colliders/PolygonCollider.js"></script>
+	<script src="LibScripts/Components/Colliders/CircleCollider.js"></script>
+	<script src="LibScripts/Components/Colliders/BoxCollider.js"></script>
+
+	<script src="LibScripts/Components/Input.js"></script>
+
+	<script src="LibScripts/GameObject.js"></script>
+
+	<!-- Put custom components from here -->
+
+	<!-- Put custom components to here -->
+
+	<script src="LibScripts/Main.js"></script>
+
+</body>
+</html>
