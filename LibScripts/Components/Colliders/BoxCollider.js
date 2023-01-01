@@ -10,9 +10,9 @@ class BoxCollider extends PolygonCollider {
 
         this.SetPoints([
             new Vector2(endScale.x / -2, endScale.y / -2),
-            new Vector2(endScale.x /  2, endScale.y / -2),
+            new Vector2(endScale.x / -2, endScale.y /  2),
             new Vector2(endScale.x /  2, endScale.y /  2),
-            new Vector2(endScale.x / -2, endScale.y /  2)
+            new Vector2(endScale.x /  2, endScale.y /  -2)
         ], true);
     }
 }

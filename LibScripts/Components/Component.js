@@ -14,16 +14,15 @@ class Component {
     gameObject;
     transform;
 
-    SetEnabled(state) {
-        if (this.#enabled === state) return;
+    get enabled() { return this.#enabled }
+    set enabled(v) {
+        if (this.#enabled === v) return;
 
-        this.#enabled = state;
+        this.#enabled = v;
 
         if (this.#enabled) this.OnEnabled();
         else this.OnDisabled();
     }
-
-    get enabled() { return this.#enabled }
 
     OnEnabled() { }
     OnDisabled() { }

@@ -34,17 +34,33 @@ class GameObject {
     }
 
 
-    static FindObjectByName(wanted) {
-        for (const gameObj of gameObjects) {
-            if (gameObj.name === wanted) {
+    static FindObjectByName(name) {
+        for (const gameObj of gameObjects)
+            if (gameObj.name === name)
                 return gameObj;
-            }
-        }
 
         return undefined;
     }
 
+    static FindObjectsByTag(tag) {
+        let res = [];
+
+        for (const gameObj of gameObjects)
+            if (gameObj.tag === tag)
+                res.push(gameObj);
+
+        return res;
+    }
+
     get active() { return this.#active }
+    set active(v) {
+        if (v === this.#active) return;
+
+        this.#active = v;
+
+        if (v) this.OnEnabled();
+        else this.OnDisabled();
+    }
 
 
     OnEnabled() { }
@@ -119,18 +135,5 @@ class GameObject {
         this.OnDestroyed();
 
         delete this;
-    }
-
-    SetActive(state) {
-        if (state === this.#active) return;
-
-        this.#active = state;
-
-        if (state) this.OnEnabled();
-        else this.OnDisabled();
-    }
-
-    MoveTowards(targetPosition, maxDistance) {
-        this.transform.position = Vector2.MoveTowards(this.transform.position, targetPosition, maxDistance);
     }
 }

@@ -10,7 +10,7 @@ class PolygonCollider extends Collider {
 
     constructor() { super() }
 
-    SetPoints(points = [], connect = false) {
+    SetPoints(points = [], connect = true) {
         this.#connected = connect;
 
         for (const point of points) {
@@ -26,7 +26,7 @@ class PolygonCollider extends Collider {
         }
 
         this.set = true;
-        this.SetEnabled(true);
+        this.enabled = true;
 
         this.UpdateRotationOfPoints();
         this.UpdatePositionOfPoints();

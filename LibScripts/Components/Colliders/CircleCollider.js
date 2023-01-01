@@ -23,7 +23,7 @@ class CircleCollider extends Collider {
     SetRadius(radius = this.transform.scale.x / 2) {
         this.radius = radius;
         this.set = true;
-        this.SetEnabled(true);
+        this.enabled = true;
     }
 
     GetBounds() {

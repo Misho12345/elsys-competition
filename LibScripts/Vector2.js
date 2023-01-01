@@ -47,7 +47,7 @@ class Vector2 {
     }
 
 
-    Equals = (vec) => this.x === vec.x && this.y === vec.y;
+    Equals = (vec) => typeof vec !== "undefined" && this.x === vec.x && this.y === vec.y;
 
     Scale(x, y) {
         if (typeof x == "number" && typeof y === "undefined") {
@@ -105,6 +105,11 @@ class Vector2 {
     Negate() {
         this.x = -this.x;
         this.y = -this.y;
+    }
+
+    Round() {
+        this.x = Math.floor(this.x);
+        this.y = Math.floor(this.y);
     }
 
     Normalize = () => this.Set(this.normalized);
